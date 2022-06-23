@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Post;
 use App\Category;
-
+use Illuminate\Support\Facades\DB;
 class PostController extends Controller
 {
     protected $validationRule = [
@@ -24,6 +24,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
+        //DB::table('posts')->truncate();
         return view('admin.posts.index',compact('posts'));
     }
 
@@ -52,6 +53,7 @@ class PostController extends Controller
         $newPost->title = $data['title'];
         $newPost->content = $data['content'];
         $newPost->published  = isset($data['published']);// true o false
+        $newPost->image = $data['image'];
         $newPost->category_id = $data['category_id'];
         $newPost->slug = $this->getSlug($newPost->title);
         $newPost->save();
@@ -106,6 +108,7 @@ class PostController extends Controller
         $post->category_id = $data['category_id'];
         $post->content = $data['content'];
         $post->published = isset($data["published"]);
+        $post->image = $data["image"];
         $post->update();
         return redirect()->route('admin.posts.show', $post->id);
     }

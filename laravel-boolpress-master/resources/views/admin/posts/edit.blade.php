@@ -8,6 +8,10 @@
       <input type="text" class="form-control" id="title" name="title" value="{{old('title', $post->title)}}" placeholder="Inserisci titolo">
     </div>
     <div class="mb-3">
+      <label for="image" class="form-label">img url</label>
+      <input type="text" class="form-control" id="image" name="image" placeholder="inserisci url immagine" value="{{old('image', $post->image)}}">
+    </div>
+    <div class="mb-3">
       <label for="content" class="form-label">Content</label>
         <textarea class="form-control" name="content" id="content" cols="30" rows="10">{{old('content', $post->content)}}</textarea>
     </div>

@@ -16,6 +16,7 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+                <a href="admin/posts"><button type="button" class="btn btn-primary">Vai ai post</button></a>
             </div>
         </div>
     </div>

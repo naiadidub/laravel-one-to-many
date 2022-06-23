@@ -41,6 +41,7 @@
     <tr>
         <td> <a href="{{route('admin.posts.show', $post->id)}}">{{$post->id}}</a></td>
         <td> <a href="{{route('admin.posts.show', $post->id)}}">{{$post->title}}</a></td>
+        <td> <a href="{{route('admin.posts.show', $post->id)}}"><img style="width:360px; height:360px;" src="{{$post->image}}" alt=""></a></td>
         <td>{{$post->created_at}}</td>
         <td><a href="{{route('admin.posts.edit', $post->id)}}" class="btn btn-primary">Edit</a></td>
         <td>
